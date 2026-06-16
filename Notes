@@ -1,0 +1,41 @@
+                                                  <!-- Schema -->
+  
+  <!-- ##  User Schema  -->
+
+  username 
+  password
+  email
+  mobile
+  Cart --- this is users personal single car each user have there own cart
+Products - there are those product who made or add by user(owner) it shows created by this particular user 
+
+
+<!-- ## Product Schema  -->
+user_id -- its owner id it shows who create product
+productName
+description
+price :{
+    amount,
+    currency
+}
+
+<!-- Cart Schema  -->
+user_id --- it shows which users cart
+items:[
+    {
+        products: which product is added to cart
+    },
+    quantity
+]
+
+
+                                     <!-- Controllers -->
+                                         
+                                     <!-- AuthControllers -->
+
+<!-- Register Controller -->
+
+1. take user details from req.body (frontend)
+2.bcrypt password (password hashing or way of mixpassword so cant recognize directly  )
+3. Create Newuser using model 
+4. generate token using jsonwebtoken
